@@ -1,0 +1,23 @@
+<div class="container">
+  <div class='jumbotron' ng-controller = 'sessionController'>
+  <div ng-controller = 'questionController'>
+    <a href="#/dashboard">Dashboard</a> | <a href="#/show/{{cur_question._id}}">Go back to Question</a> | <a href="/logout">Logout</a><br>
+    <h2>{{cur_question.question}}</h2>
+    <h3>{{cur_question.description}}</h3>
+    <div ng-controller = 'answerController'>
+      <p ng-repeat = 'error in errors' style='color:red'>{{error}}</p>
+    <form>
+      Your Answer: <input type="text" ng-model="newAnswer.answer"><br>
+      Details(optional): <input type="text" ng-model='newAnswer.details'><br>
+      <input type="submit" value="Submit" ng-click='addAnswer(cur_question._id,curUser,newAnswer)'>
+    </form>
+    <a href="#!/dashboard"><button>Cancel</button></a>
+
+  </div>
+  </div>
+</div></div>
+<style media="screen">
+  body{
+    background-color: white
+  }
+</style>

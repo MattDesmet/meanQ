@@ -1,0 +1,15 @@
+<div ng-controller='sessionController'>
+  <a href="#/dashboard">Dashboard</a>
+  <a href="/logout">Logout</a><br>
+  <div ng-controller = 'questionController'>
+    <h1>New Question</h1>
+    <p ng-repeat = 'error in errors' style='color:red'>{{error}}</p>
+    <form>
+      Question: <input type="text" ng-model="newQuestion.question"><br>
+      Description: <input type="text" ng-model="newQuestion.description"><br>
+      <input type="submit" name="" value="Submit" ng-click="addQuestion(curUser._id)">
+    </form>
+    <a href="#/dashboard"><button>Cancel</button></a>
+  </div>
+
+</div>

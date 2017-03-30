@@ -1,0 +1,14 @@
+<link href="static/signin.css" rel="stylesheet">
+
+<div class='container' ng-controller='sessionController'>
+  <h1>Questions</h1>
+  <p style='color:red' ng-repeat='error in errors track by $index'>{{error}}</p>
+<form ng-submit='login()' class="form-signin">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label for="inputName" class="sr-only">Name</label>
+  <input type="text" id="inputName" class="form-control" ng-model='logReg.name' ng-init="logReg.name='Bob'" required autofocus>
+  <!-- <input type="text" id="inputName" class="form-control" placeholder="enter name" ng-model='logReg.name' ng-init="logReb.name='Bob'" required autofocus> -->
+  <button class="btn btn-lg btn-warning btn-block" type="submit">Sign in</button>
+  <!-- <button class="btn btn-lg btn-warning btn-block" type="submit" ng-click='login()'>Sign in</button> -->
+</form>
+</div>

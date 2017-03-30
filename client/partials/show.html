@@ -1,0 +1,19 @@
+<div class='container'>
+    <div class='jumbotron' ng-controller='sessionController'>
+        <a href="#/dashboard">Dashboard</a> |
+        <a href="/logout">Logout</a> |
+        <a href="#/answer/{{cur_question._id}}">Answer This Question</a>
+        <div ng-controller='questionController'>
+
+            <h2>{{cur_question.question}}</h2>
+            <h3>{{cur_question.description}}</h3>
+            <div ng-controller='answerController'>
+                <div ng-repeat='show in cur_question._answers | orderBy: "-likes"'>
+                    Name: {{show.name}}<br> Answer: <b>{{show.answer}}</b><br> Details:{{show.details}}
+                    <br> {{show.likes}} likes!<br>
+                    <button ng-click="like(show)">LIKE!</button><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
